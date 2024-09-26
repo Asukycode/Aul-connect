@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Created Successfully</title>
+    <link rel="stylesheet" href="{% static 'style/blog_post_success.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'home' %}#about">About</a></li>
+                    <li><a href="{% url 'home' %}#services">Services</a></li>
+                    <li><a href="{% url 'blog_home' %}">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Blog Post Created Successfully!</h1>
+        <p>Your new blog post has been created successfully.</p>
+        <a class="btn" href="{% url 'blog_home' %}">Go to Blog</a>
+        <a class="btn" href="{% url 'blog_create' %}">Publish another Post</a>
+    </div>
+</body>
+</html>

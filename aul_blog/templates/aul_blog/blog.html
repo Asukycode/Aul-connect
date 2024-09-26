@@ -1,0 +1,288 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anchor Connect</title>
+    <link rel="stylesheet" href="{% static 'style/blog_style.css' %}" />
+    <!-- <link rel="stylesheet" href="style/style.css"> -->
+    <style></style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="{% static 'images/logo.png' %}" />
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="{% url 'home' %}#home">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'home' %}#about">About</a>
+          </li>
+          <li>
+            <a href="{% url 'home' %}#services">Services</a>
+          </li>
+          <li>
+            <a href="{% url 'blog_home' %}">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <aside class="sidebar">
+      <div class="sidebar-ad">
+        <h2>Stay Informed!</h2>
+        <p>Discover the latest school news and events.</p>
+        <ul>
+          <li>
+            <strong>Catch Up:</strong> Stay updated with our articles and news coverage.
+          </li>
+          <li>
+            <strong>Get Involved:</strong> Join our club and contribute your voice.
+          </li>
+          <li>
+            <strong>Connect:</strong> Follow us on social media for live updates.
+          </li>
+        </ul>
+        <a href="#" class="join-btn">Join Now</a>
+      </div>
+    </aside>
+    <aside class="sidebar">
+      <div class="sidebar-ad2">
+        <h2>! Watch Our Video</h2>
+        <iframe id="youtube-video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="tabs">
+        <a class="tab-link" href="#" class="active" data-tab="all">View All</a>
+        <a class="tab-link" href="#vc-news" data-tab="vc-news">Vc News</a>
+        <a class="tab-link" href="#" data-tab="sport-news">Sport News</a>
+        <a class="tab-link" href="#" data-tab="university-event">University Event</a>
+        <a class="tab-link" href="#" data-tab="entertainment">Entertainment</a>
+      </div>
+      <div class="content" id="all">
+        <div class="slider">
+          <div class="slides">
+            <img src="{% static 'images/blog_images/1.jpg' %}" alt="Slide 1" />
+          </div>
+          <div class="slides">
+            <img src="{% static 'images/blog_images/2.jpg' %}" alt="Slide 2" />
+          </div>
+          <div class="slides">
+            <img src="{% static 'images/blog_images/3.jpg' %}" alt="Slide 3" />
+          </div>
+          <div class="slides">
+            <img src="{% static 'images/blog_images/4.jpg' %}" alt="Slide 3" />
+          </div>
+          <div class="slides">
+            <img src="{% static 'images/blog_images/5.jpg' %}" alt="Slide 3" />
+          </div>
+          <div class="slides">
+            <img src="{% static 'images/blog_images/6.jpg' %}" alt="Slide 3" />
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        {% comment %} <div class="article-container">
+          {% for blog_post in blog_posts %}
+            <a class="card" href="blog_post/{{ blog_post.id }}">
+              <div class="card-image-container">
+                <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}" />
+              </div>
+              <p class="card-title">{{ blog_post.title }}</p>
+
+              <p class="card-des">
+                {{ blog_post.content|truncate_words:10 }}<br />
+              </p>
+              <div class="tags">
+                {% for tag in blog_post.tags|split:',' %}
+                  <span>{{ tag }}</span>
+                {% endfor %}
+              </div>
+            </a>
+          {% endfor %}
+        </div> {% endcomment %}
+
+        {% comment %} <div class="article-container">
+          <div class="article-info">
+            <img src="media\images\side.jpg" alt="Student Week" />
+            <h2>10 Simple Tips to Save Energy at Home</h2>
+            <p>What is an intelligent lighting system and how it can help save energy.</p>
+            <div class="tags">
+              <span>Energy</span>
+              <span>Economy</span>
+            </div>
+          </div>
+        </div> {% endcomment %}
+        <!-- More articles... -->
+      </div>
+      <div class="content" id="vc-news">
+        <!-- Content for Vc News -->
+        <div class="article-container">
+          {% for blog_post in blog_posts %}
+            {% if blog_post.category == 'vc_news' %}
+              <a class="card" href="blog_post/{{ blog_post.id }}">
+                <div class="card-image-container">
+                  <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}" />
+                </div>
+                <p class="card-title">{{ blog_post.title }}</p>
+
+                <p class="card-des">
+                  {{ blog_post.content|truncate_words:10 }}<br />
+                </p>
+                <div class="tags">
+                  {% for tag in blog_post.tags|split:',' %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Content for Sport News -->
+      <div class="content" id="sport-news">
+        <div class="article-container">
+          <!-- inside here -->
+          {% for blog_post in blog_posts %}
+            {% if blog_post.category == 'sport_news' %}
+              <a class="card" href="blog_post/{{ blog_post.id }}">
+                <div class="card-image-container">
+                  <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}" />
+                </div>
+                <p class="card-title">{{ blog_post.title }}</p>
+
+                <p class="card-des">
+                  {{ blog_post.content|truncate_words:10 }}<br />
+                </p>
+                <div class="tags">
+                  {% for tag in blog_post.tags|split:',' %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <!-- More content divs for other tabs... -->
+      <div class="content" id="university-event">
+        <!-- Content for Sport News -->
+        <div class="article-container">
+          <!-- inside here -->
+          {% for blog_post in blog_posts %}
+            {% if blog_post.category == 'uni_event' %}
+              <a class="card" href="blog_post/{{ blog_post.id }}">
+                <div class="card-image-container">
+                  <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}" />
+                </div>
+                <p class="card-title">{{ blog_post.title }}</p>
+
+                <p class="card-des">
+                  {{ blog_post.content|truncate_words:10 }}<br />
+                </p>
+                <div class="tags">
+                  {% for tag in blog_post.tags|split:',' %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <!-- Content for Sport News -->
+      <div class="content" id="entertainment">
+        <div class="article-container">
+          <!-- inside here -->
+          {% for blog_post in blog_posts %}
+            {% if blog_post.category == 'entertainment' %}
+              <a class="card" href="blog_post/{{ blog_post.id }}">
+                <div class="card-image-container">
+                  <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}" />
+                </div>
+                <p class="card-title">{{ blog_post.title }}</p>
+
+                <p class="card-des">
+                  {{ blog_post.content|truncate_words:10 }}<br />
+                </p>
+                <div class="tags">
+                  {% for tag in blog_post.tags|split:',' %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="btn-group">
+        <a href="#">View More</a>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.tab-link')
+        const contents = document.querySelectorAll('.content')
+      
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', (event) => {
+            event.preventDefault()
+            tabs.forEach((t) => t.classList.remove('active'))
+            tab.classList.add('active')
+      
+            const tabContent = tab.getAttribute('data-tab')
+            contents.forEach((content) => {
+              if (content.id === tabContent || tabContent === 'all') {
+                content.style.display = 'block'
+              } else {
+                content.style.display = 'none'
+              }
+            })
+          })
+        })
+      
+        // Initially show the content of the active tab
+        document.querySelector('.tab-link.active').click()
+      })
+      
+      let slideIndex = 0
+      showSlides()
+      
+      function showSlides() {
+        let slides = document.getElementsByClassName('slides')
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none'
+        }
+        slideIndex++
+        if (slideIndex > slides.length) {
+          slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = 'block'
+        setTimeout(showSlides, 5000) // Change image every 5 seconds
+      }
+      
+      function plusSlides(n) {
+        slideIndex += n - 1
+        showSlides()
+      }
+      
+      window.onload = function () {
+        // Replace with your YouTube video ID
+        var videoID = 'YjHZpxiVuIc'
+        var iframe = document.getElementById('youtube-video')
+        var autoplayURL = 'https://www.youtube.com/embed/' + videoID + '?autoplay=1'
+        iframe.src = autoplayURL
+      }
+    </script>
+  </body>
+</html>

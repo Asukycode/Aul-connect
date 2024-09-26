@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Connect</title>
+    <link rel="stylesheet" href="{%static 'style/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-wnR+9wBg6bAaLWl8A8zyvz5v2MkM2vlA0KL9n+xBp9/4lfi2EEI4cX6mFzK3Q3s2uN1ZByfOs6lNmh2OMTK2ZQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+    <div class="symbols">
+        <img src="{% static 'images/shapes/circle.png' %}" alt="" class="img1">
+        <img src="{% static 'images/shapes/triangle.png' %}" alt="" class="img3">
+        <img src="{% static 'images/shapes/triangle.png' %}" alt="" class="img21">
+        <img src="{% static 'images/shapes/triangle.png' %}" alt="" class="img31">
+        <img src="{% static 'images/shapes/triangle.png' %}" alt="" class="img41">
+        <img src="{% static 'images/shapes/circle.png' %}" alt="" class="img61">
+        <img src="{% static 'images/shapes/triangle.png' %}" alt="" class="img62">
+        <img src="{% static 'images/shapes/grid.png' %}" alt="" class="img63">
+        <img src="{% static 'images/shapes/circle.png' %}" alt="" class="img64">
+        <img src="{% static 'images/shapes/triangle.png' %}" alt="" class="img65">
+        <img src="{% static 'images/shapes/circle.png' %}" alt="" class="img67">
+
+
+
+    </div>
+    <header>
+
+        <div class="logo"><img src="{% static 'images/logo.png' %}"></div>
+
+        <nav>
+            <ul>
+                <a href="#home"><li>Home</li></a>
+                <a href="#services"><li>Services</li></a>
+                <a href="#about"><li>About</li></a>
+              
+                <a href="{% url 'blog_home' %}"> <li>Blog</li></a>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="home block">
+            <div class="overlay">
+                <div class="slides">
+                    <img src="{% static 'images/slide/3.jpg' %}" alt="Slide 1">
+                </div>
+            </div>
+            <section class="text">
+                <h1> Welcome aboard Anchor Connect</h1>
+                <p>
+                    Welcome to Anchor Connect, the official blog of Anchor University! Here, we bring you the latest
+                    updates, inspiring stories, and insightful articles from our vibrant campus community. Whether you
+                    are a current student, prospective student, alumnus, or simply a friend of Anchor University, Anchor
+                    Connect is your go-to source for staying informed and engaged. Discover the achievements of our
+                    students and faculty, explore campus events, and delve into thought-provoking discussions that
+                    highlight the spirit and values of Anchor University. Join us as we celebrate learning, innovation,
+                    and connection at Anchor Connect!
+                    
+                </p>
+                <div class="infobtn">
+                    <a class="btn" href="{% url 'blog_home' %}">Visit Blog</a>
+                </div>
+
+                <div class="stats">
+                    ...Get the latest Update about Anchor here
+                </div>
+            </section>
+            <section class="infographics">
+                <!-- <img src="{% 'images/anchor_logo.png" alt=""> -->
+            </section>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about_img block">
+            </div>
+            <div class="about_text block">
+                <h1>About</h1>
+                <p>
+                    Welcome to Anchor Connect, the heartbeat of Anchor University’s dynamic community. Established to
+                    foster a deeper connection among students, faculty, alumni, and friends of the university, Anchor
+                    Connect serves as a platform to share stories, insights, and achievements that reflect the essence
+                    of our academic and social environment. Our blog is a vibrant space where we celebrate the
+                    milestones of our students and faculty, spotlight innovative projects and research, and provide a
+                    forum for thoughtful dialogue on topics that matter to our community. At Anchor Connect, we believe
+                    in the power of storytelling to inspire and unite, creating a stronger, more engaged university
+                    family.
+                    Anchor Connect is more than just a blog; it is a testament to the spirit of Anchor University. Our
+                    contributors are a diverse mix of voices, each bringing unique perspectives and experiences that
+                    enrich our collective narrative. From academic achievements and campus events to personal
+                    reflections and community initiatives, our content is designed to inform, inspire, and connect. We
+                    invite you to explore our posts, share your thoughts, and become an active participant in the
+                    ongoing story of Anchor University. Together, we can build a vibrant, connected community that
+                    embodies the values and vision of our beloved institution.
+               
+                </p>
+            </div>
+        </section>
+        <section class="sponsors block" id="sponsors">
+            <h1>Our Sponsors</h1>
+            <div class="sponsor-logos">
+                <div class="sponsor-logo">
+                    <img src="{% static 'images/blog_images/27.jpg' %}" alt="Sponsor 1">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="{% static 'images/blog_images/2.jpg' %}" alt="Sponsor 2">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="{% static 'images/blog_images/3.jpg' %}" alt="Sponsor 3">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="{% static 'images/blog_images/4.jpg' %}" alt="Sponsor 4">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="{% static 'images/blog_images/5.jpg' %}" alt="Sponsor 5">
+                </div>
+            </div>
+        </section>
+        <section class="services block" id="services">
+            <h1>Our Services</h1>
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="service-text">
+                    <h2>Campus News</h2>
+                    <p>Stay updated with the latest news and events happening at Anchor University. Our comprehensive
+                        coverage ensures you never miss out on important updates.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="service-text">
+                    <h2>Academic Programs</h2>
+                    <p>Explore our diverse academic programs designed to foster learning and innovation. Find detailed
+                        information on courses, faculty projects, and research initiatives.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-users"></i></div>
+                <div class="service-text">
+                    <h2>Community Engagement</h2>
+                    <p>Connect with our vibrant community through stories and experiences shared by students, faculty,
+                        and alumni. Join in discussions and collaborative projects.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="service-text">
+                    <h2>Career Development</h2>
+                    <p>Access resources and advice to support your career journey. Learn from success stories,
+                        participate in workshops, and connect with mentors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact block" id="contact">
+            <h1>Get in Touch</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>We would love to hear from you! Whether you have questions, feedback, or simply want to connect,
+                        feel free to reach out to us.</p>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Anchor University, Ayobo Lagos, Lagos, Lagos State</li>
+                        <li><i class="fas fa-phone"></i></li>
+                        <li><i class="fas fa-envelope"></i> anchorconnect@aul.edu.ng</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form action="submit_form.php" method="post">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <div class="logo">
+                Anchor Connect
+            </div>
+            <div class="footerlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Blog </a></li>
+                </ul>
+                &copy; 2024 Anchor Connect All Rights Reserved
+            </div>
+        </section>
+        <div class="socials">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+            <span class="email">
+                Support : anchorconnect@aul.edu.ng
+            </span>
+        </div>
+    </footer>
+
+    <script defer src="{% static 'script/smoothscroll.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <script>
+        // Smooth scroll functionality
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

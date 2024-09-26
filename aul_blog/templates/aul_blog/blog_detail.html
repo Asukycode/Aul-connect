@@ -1,0 +1,73 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail View</title>
+    <link rel="stylesheet" href="{% static 'style/blog_style.css' %}">
+    <!-- <link rel="stylesheet" href="style/style.css"> -->
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><img src="{% static 'images/logo.png' %}"></div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+
+            <li><a href="{% url 'blog_home' %}">Blog </a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main">
+        <article class="blog-post">
+            <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}" class="cover-image">
+            <h2 class="blog-title">{{blog_post.title}}</h2>
+            <p class="blog-meta">By Anchor Content Creators | {{blog_post.created_at}}</p>
+            <div class="blog-content">
+                <p>{{blog_post.content}}</p>
+                
+                {% comment %} <p>Aliquam erat volutpat. Suspendisse potenti. Cras a ligula in erat laoreet lacinia. Phasellus ultricies, 
+                nulla at dapibus cursus, dui nisi condimentum erat, et vulputate velit dolor eget mi. Vestibulum consectetur 
+                metus a ante varius, et scelerisque turpis volutpat. Integer bibendum feugiat libero, nec scelerisque eros.</p>
+        
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed id urna augue. 
+                Quisque et facilisis purus. Nam sagittis dui vel metus vehicula, vel vehicula turpis fermentum. Nullam ac 
+                nunc vel libero scelerisque feugiat. Donec sed laoreet nunc, ut pharetra justo.</p> {% endcomment %}
+            </div>
+        </article>
+        
+
+        <section class="comments-section">
+            <h3>Comments</h3>
+
+            {% comment %} <div class="comment">
+                <p class="comment-author">Jane Smith</p>
+                <p class="comment-text">Great tips! I've started implementing some of these and have already noticed a difference in my energy bill.</p>
+                <p class="comment-date">June 14, 2024</p>
+            </div> {% endcomment %}
+
+            {% comment %} <div class="comment">
+                <p class="comment-author">Mark Johnson</p>
+                <p class="comment-text">Very informative article. Thanks for sharing!</p>
+                <p class="comment-date">June 13, 2024</p>
+            </div> {% endcomment %}
+
+            <!-- Add more comments as needed -->
+        </section>
+    </main>
+   
+
+</body>
+
+</html>
